@@ -22,9 +22,7 @@ public class TravellingSalesmanSolver {
 
 	public Journey solve() {
 		List<Integer> costList = new ArrayList<>();
-
 		this.journey.addNode(this.home);
-
 		this.travelToClosestAllowed(this.home, this.home, costList);
 
 		int total = 0;
@@ -44,9 +42,7 @@ public class TravellingSalesmanSolver {
 		}
 
 		Path bestPath = this.findCurrentBestPath(current, this.graph, this.visited, costList);
-
 		this.journey.addNode(bestPath.b);
-
 		this.travelToClosestAllowed(first, bestPath.b, costList);
 	}
 
@@ -81,7 +77,6 @@ public class TravellingSalesmanSolver {
 	}
 
 	private void returnHome(final Node current, final Map<Node, List<Path>> graph, final List<Integer> costList) {
-
 		this.journey.addNode(this.home);
 
 		List<Path> paths = graph.get(current);
